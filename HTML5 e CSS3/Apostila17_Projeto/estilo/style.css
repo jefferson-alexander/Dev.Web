@@ -1,0 +1,186 @@
+@charset "UTF-8"; /*formatação de estilo*/
+/*usando fonte do Google-Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/*usando fonte baixada e que está na pasta do projeto*/
+@font-face{
+    font-family: 'Android';
+    src:url('../pacote-projeto-d010/fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+/*selecionando todos os elementos do HTML*/
+*{
+    margin: 0px;    /*zerou as margens de todo o documento para configurar nas tags*/
+    padding: 0px;
+}
+
+:root{ /*raiz da árvore do documento e serve para o documento inteiro. Usada para declarar varáveis globais*/
+    --cor0: #c5ebd6;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+
+    --fontPadrao:    Arial, Verdana, Helvetica, Sans-serif;
+    --fontDestaque: 'Bebas Neue', sans-serif;
+    --fontAndroid:  'Android', sans-serif;
+}
+body{
+    background-color: var(--cor0);
+    font-family: var(--fontPadrao);
+}
+a.externo::after{ /*todo link da classe 'externo' colocar depois dele a imagem*/
+    content: '\00A0\1F517';
+}
+main{
+    background-color: white;
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;   /*a margem adapta ao tamanho da tela*/
+    margin-bottom: 30px; /*margem abaixo*/
+    padding: 20px;  /*margem interna*/
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.596);
+    border-bottom-left-radius: 10px;    /*arredondamento das bordas*/
+    border-bottom-right-radius: 10px;
+}
+main h1{
+    color: var(--cor5);
+    font-family: var(--fontAndroid);    
+    text-align: center;   
+    font-size: 1.6em;
+}
+main h2{
+    color: var(--cor5);
+    font-family: var(--fontAndroid);
+    background-image: linear-gradient(to right, var(--cor1), transparent); 
+    font-size: 1.3em;  
+    text-indent: 10px; /*espaço na esquerda*/
+    font-weight: normal;        /*sem negrito*/
+}
+main img{   /*largura das imagens, faz com que elas se expremem e adaptem com a tela*/
+    width: 100%;
+}
+main img.pequena{
+    max-width: 350px;   /*tamanho máximo da imagem*/
+    display: block;
+    margin: auto;
+}
+main p{  /*configuração de parágrafo*/
+    margin: 15px 0px; /*alturas 15px, lados 0px*/
+    text-align: justify;
+    text-indent: 30px;  /*recuo de parágrafo*/
+    font-size: 1em;
+    line-height: 1.5em; /*altura entre as linhas*/
+}
+main a{ /*configuração para os links no texto*/
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor5);
+    background-color: var(--cor1);
+    padding: 2px 6px;    /*margem*/
+}
+main a:hover{
+    text-decoration: underline;   /*sublinhando*/
+    color: var(--cor3);
+}
+main strong{
+    color: var(--cor4);
+    font-weight: bold;  /*peso de negrito*/    
+}
+div.video{
+    background-color: var(--cor5);
+    margin: 0px -20px 30px -20px;    
+    padding: 20px;
+    padding-bottom: 57%;
+    position: relative;
+}
+div.video > iframe{
+    position: absolute;
+    top: 5%;
+    left: 5%;    /*esquerda*/   
+    width: 90%;  /*largura*/
+    height: 90%; /*altura*/
+}
+header{     
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5)); /*cria degradê*/
+    min-height: 150px;  /*altura mínima*/
+    padding-top: 40px;
+    
+}
+header > h1{
+    font-family: var(--fontDestaque);
+    text-transform: uppercase; /*caixa alta*/
+    color: white;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3em;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.377);
+}
+header > p{
+    color: white;
+    font-family: var(--fontPadrao);
+    font-size: 1.2em;    
+    text-align: center;
+    max-width: 600px; /*largura máxima*/
+    padding-right: 10px; /*margem máxima interna*/
+    padding-left: 10px;
+    margin: auto;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.377);
+    
+}
+nav{
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px, 7px 9px rgba(0, 0, 0, 0.918);
+}
+nav > a{
+    text-decoration: none;    /*tira o sublinhado*/
+    padding: 3px; /*margem*/
+    color: white;
+    font-weight: bold; /*peso de degrito*/
+    margin-right: 30px;
+    transition-duration: .5s; /*meio segundo para realizar efeito*/   
+}
+nav >a:hover{   /*efeito de mouse*/
+    background-color: var(--cor3);
+    color: var(--cor5);    
+}
+aside{
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px; /*arredondamento das bordas*/
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.473);
+}
+aside > section > ul{
+    list-style-type: '\2714\00A0\00A0'; /*inserindo emogi do site: https://emojipedia.org/ é copiado apenas o número do código e 00A0 é espaçamento*/
+    list-style-position: inside;
+    columns: 2;
+    
+}
+aside > section > h3{
+    background-color: var(--cor4);
+    color: white;
+    padding: 5px;
+    font-size: 1em;
+    margin: -10px -10px 0px -10px; /* cima, direita, baixo, esquerda. Crescem 10px pra fora*/
+    border-radius: 10px 10px 0px 0px; /*topLeft,topRigth, bottomleft,bottomRigth*/
+}
+footer{
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+footer a {
+    color: var(--cor1);
+    font-weight: bolder;
+    text-decoration: none;
+}
+footer a:hover{
+    text-decoration:  underline;
+    color: var(--cor3);
+}
+
+    
